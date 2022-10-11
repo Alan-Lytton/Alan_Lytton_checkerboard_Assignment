@@ -1,0 +1,22 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.redBox {
+    background: red;
+    height: 90px;
+    width: 90px;
+}
+
+.blackBox {
+    background-color: black;
+    height: 90px;
+    width: 90px;
+}

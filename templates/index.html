@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Checkerboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    {% if main != "red" %}
+        <style>
+            .change1 {
+                background-color: {{main}};
+            }
+        </style>
+    {% endif %}
+    {% if second != "black"  %}
+        <style>
+            .change2 {
+                background-color: {{second}};
+            }
+        </style>
+    {% endif %}
+</head>
+
+<body>
+    {% if num1 >= 1 and num2 >=1 %}
+        {% for x in range(0,num1) %}
+            {% if x % 2 == 0 %}
+                <div class="container1">
+                    {% for x in range(0,num2)%}
+                        {% if x % 2 == 0 %}
+                            <div class="redBox change1"></div>
+                        {% else %}
+                            <div class="blackBox change2" ></div>
+                        {% endif %}               
+                    {% endfor %}
+                </div> 
+            {% else %}
+                <div class="container1">
+                    {% for x in range(0,num2)%}
+                        {% if x % 2 == 0 %}
+                            <div class="blackBox change2"></div>
+                        {% else %}
+                            <div class="redBox change1"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% elif num1 >=1 and num2 == 0 %}
+        {% for x in range(0,num1) %}
+            {% if x % 2 == 0 %}
+                <div class="container1">
+                    {% for x in range(0,8)%}
+                        {% if x % 2 == 0 %}
+                            <div class="redBox"></div>
+                        {% else %}
+                            <div class="blackBox"></div>
+                        {% endif %}               
+                    {% endfor %}
+                </div> 
+            {% else %}
+                <div class="container1">
+                    {% for x in range(0,8)%}
+                        {% if x % 2 == 0 %}
+                            <div class="blackBox"></div>
+                        {% else %}
+                            <div class="redBox"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        {% for x in range(0,8) %}
+            {% if x % 2 == 0 %}
+                <div class="container1">
+                    {% for x in range(0,8)%}
+                        {% if x % 2 == 0 %}
+                            <div class="redBox"></div>
+                        {% else %}
+                            <div class="blackBox"></div>
+                        {% endif %}               
+                    {% endfor %}
+                </div> 
+            {% else %}
+                <div class="container1">
+                    {% for x in range(0,8)%}
+                        {% if x % 2 == 0 %}
+                            <div class="blackBox"></div>
+                        {% else %}
+                            <div class="redBox"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</body>
+
+</html>
